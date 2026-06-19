@@ -51,7 +51,22 @@
             padding: 40px 30px;
             text-align: center;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* จัดกลางรูปและข้อความในแนวตั้ง */
         }
+
+        /* --- เพิ่ม CSS สำหรับรูปโปรไฟล์ --- */
+        .profile-img {
+            width: 130px; /* ขนาดรูปโปรไฟล์ (เท่ากันเพื่อให้เป็นวงกลม) */
+            height: 130px; /* ขนาดรูปโปรไฟล์ (เท่ากันเพื่อให้เป็นวงกลม) */
+            object-fit: cover; /* ทำให้รูปไม่เบี้ยวเมื่อ crop */
+            border-radius: 50%; /* ทำให้เป็นวงกลม */
+            border: 4px solid white; /* เส้นขอบสีขาว */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เงาใต้รูป */
+            margin-bottom: 20px; /* ระยะห่างจากข้อความโรงเรียนด้านล่าง */
+        }
+        /* ------------------------------- */
 
         .school-badge {
             background-color: rgba(255, 255, 255, 0.2);
@@ -104,7 +119,7 @@
             border-bottom: 2px solid var(--primary-light);
             display: flex;
             align-items: center;
-            gap: 8px;
+  0 0       gap: 8px;
         }
 
         .info-list {
@@ -187,87 +202,4 @@
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
-            .card-container {
-                box-shadow: none;
-                max-width: 100%;
-                border-radius: 0;
-                border: 1px solid #e2e8f0;
-            }
-            /* ปิดแอนิเมชันเวลาปริ้นท์ให้อยู่นิ่งๆ */
-            .dog {
-                animation: none !important;
-                transform: translateY(0) scaleX(var(--flip, 1)) !important;
-            }
-            @page {
-                size: A4 portrait;
-                margin: 0;
-            }
-        }
-    </style>
-</head>
-<body>
-<img src="https://s359.kapook.com/pagebuilder/070c7b12-b37c-4cfd-ac97-eeaa26db5727.jpg" alt="รูปภาพตัวอย่าง" class="responsive-image">
-    <main class="card-container">
-        <header class="card-header">
-            <div class="school-badge">🏫 โรงเรียนจอมทอง | ระดับชั้น ม.3/2</div>
-            <h1 class="name">เด็กหญิงธนิดา ปันม้า</h1>
-            <div class="nickname">(น้องแต๊กา)</div>
-            <div class="motto">"เป้าหมายใหญ่ไม่รอคนขี้เกียจแต่รอแต๊กาหน่อย"</div>
-        </header>
-
-        <div class="card-body">
-            
-            <section class="info-section">
-                <h2 class="section-title">👤 ข้อมูลส่วนตัว</h2>
-                <ul class="info-list">
-                    <li><span class="info-label">วันเกิด:</span> <span class="info-value">10 กุมภาพันธ์ 2555</span></li>
-                    <li><span class="info-label">เพศ:</span> <span class="info-value">หญิง</span></li>
-                    <li><span class="info-label">กรุ๊ปเลือด:</span> <span class="info-value">O</span></li>
-                    <li><span class="info-label">ราศี:</span> <span class="info-value">มังกร</span></li>
-                    <li><span class="info-label">ส่วนสูง:</span> <span class="info-value">158 ซม.</span></li>
-                    <li><span class="info-label">ภูมิลำเนา:</span> <span class="info-value">จังหวัดเชียงใหม่</span></li>
-                </ul>
-            </section>
-
-            <section class="info-section">
-                <h2 class="section-title">📚 การเรียน & เป้าหมาย</h2>
-                <ul class="info-list">
-                    <li><span class="info-label">วิชาที่ชอบ:</span> <span class="info-value">วิทยาศาสตร์</span></li>
-                    <li><span class="info-label">วิชาที่ยาก:</span> <span class="info-value">ภาษาอังกฤษ</span></li>
-                    <li><span class="info-label">ชมรม:</span> <span class="info-value">ดาราศาสตร์</span></li>
-                    <li><span class="info-label">ความฝัน:</span> <span class="info-value">แพทย์</span></li>
-                    <li><span class="info-label">เพื่อนสนิท:</span> <span class="info-value">ซีซ่าร์</span></li>
-                </ul>
-            </section>
-
-            <section class="info-section">
-                <h2 class="section-title">💖 ความชอบ & งานอดิเรก</h2>
-                <ul class="info-list">
-                    <li><span class="info-label">อาหารโปรด:</span> <span class="info-value">ผัดผัก</span></li>
-                    <li><span class="info-label">สีโปรด:</span> <span class="info-value">สีเขียว</span></li>
-                    <li><span class="info-label">กีฬา:</span> <span class="info-value">บาสเกตบอล</span></li>
-                    <li><span class="info-label">งานอดิเรก:</span> <span class="info-value">ฟังเพลง</span></li>
-                    <li><span class="info-label">เพลงที่ชอบ:</span> <span class="info-value">เพลงเก่าๆ</span></li>
-                    <li><span class="info-label">ซีรีส์/อนิเมะ:</span> <span class="info-value">นักเรียนพลังกิ๊ฟ</span></li>
-                </ul>
-            </section>
-
-            <section class="info-section">
-                <h2 class="section-title">✨ ทักษะความสามารถ</h2>
-                <div class="skills-container">
-                    <span class="skill-pill">พับใบตอง</span>
-                    <span class="skill-pill">ทำอาหาร</span>
-                </div>
-            </section>
-
-        </div>
-
-        <div class="dogs-playground">
-            <div class="dog dog-1">🐕</div>
-            <div class="dog dog-2">🐩</div>
-        </div>
-
-    </main>
-
-</body>
-</html>
+        
