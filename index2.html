@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* เปลี่ยนโทนสีหลักเป็นสีเขียว */
             --primary-color: #16a34a; /* Green 600 */
             --primary-light: #dcfce7; /* Green 100 */
             --secondary-color: #22c55e; /* Green 500 */
@@ -32,7 +31,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 80px 20px 40px; /* เพิ่ม padding ด้านบนเพื่อให้มีพื้นที่สำหรับรูปที่ยื่นออกมา */
         }
 
         .card-container {
@@ -41,34 +40,39 @@
             max-width: 210mm; /* A4 Width */
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(22, 163, 74, 0.15);
-            overflow: hidden;
             position: relative;
+            /* เปลี่ยนจาก overflow: hidden เป็น visible เพื่อให้รูปภาพลอยพ้นขอบขึ้นไปได้ */
+            overflow: visible; 
         }
 
         .card-header {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 40px 30px;
+            padding: 80px 30px 40px; /* เพิ่ม padding-top เพื่อเว้นระยะจากรูปภาพลงมาหาเนื้อหา */
             text-align: center;
             position: relative;
+            border-radius: 16px 16px 0 0; /* กำหนดมุมโค้งด้านบนให้หัวการ์ดเนื่องจากเปลี่ยน overflow ของ container */
         }
 
-        /* ส่วนจัดรูปแบบรูปภาพใหม่ */
+        /* จัดตำแหน่งรูปภาพให้อยู่ตรงกลางและเยื้องขึ้นด้านบน */
         .profile-img-container {
-            width: 120px; /* กำหนดขนาดวงกลม */
-            height: 120px;
-            margin: 0 auto 20px; /* จัดกึ่งกลางและเว้นระยะด้านล่าง */
-            border-radius: 50%; /* ทำให้เป็นวงกลม */
-            border: 5px solid white; /* กรอบสีขาว */
-            overflow: hidden; /* ซ่อนส่วนเกิน */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* เพิ่มเงาให้มีมิติ */
-            position: relative; /* สำหรับจัดตำแหน่ง */
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 5px solid var(--card-bg); /* กรอบสีขาวล้อมรอบรูป */
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            position: absolute;
+            top: -65px; /* ดันรูปภาพขึ้นไปครึ่งหนึ่งของความสูง */
+            left: 50%;
+            transform: translateX(-50%); /* จัดให้อยู่กึ่งกลางหน้าจอพอดี */
+            background-color: #ffffff;
         }
 
         .profile-img-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* ตรวจสอบให้แน่ใจว่ารูปภาพครอบคลุมพื้นที่โดยไม่บิดเบือน */
+            object-fit: cover;
         }
 
         .school-badge {
@@ -181,7 +185,7 @@
 
         .dog-1 {
             animation-delay: 0s;
-            transform: scaleX(-1); /* หันหน้าเข้าหากัน */
+            transform: scaleX(-1);
         }
 
         .dog-2 {
@@ -200,7 +204,7 @@
         @media print {
             body {
                 background-color: white;
-                padding: 0;
+                padding: 60px 0 0 0;
                 display: block;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
@@ -211,7 +215,6 @@
                 border-radius: 0;
                 border: 1px solid #e2e8f0;
             }
-            /* ปิดแอนิเมชันเวลาปริ้นท์ให้อยู่นิ่งๆ */
             .dog {
                 animation: none !important;
                 transform: translateY(0) scaleX(var(--flip, 1)) !important;
@@ -224,14 +227,15 @@
     </style>
 </head>
 <body>
+
     <main class="card-container">
         <header class="card-header">
-            <div class="school-badge">🏫 โรงเรียนจอมทอง | ระดับชั้น ม.3/2</div>
             
             <div class="profile-img-container">
                 <img src="https://s359.kapook.com/pagebuilder/070c7b12-b37c-4cfd-ac97-eeaa26db5727.jpg" alt="รูปภาพของ เด็กหญิงธนิดา ปันม้า">
             </div>
             
+            <div class="school-badge">🏫 โรงเรียนจอมทอง | ระดับชั้น ม.3/2</div>
             <h1 class="name">เด็กหญิงธนิดา ปันม้า</h1>
             <div class="nickname">(น้องแต๊กา)</div>
             <div class="motto">"เป้าหมายใหญ่ไม่รอคนขี้เกียจแต่รอแต๊กาหน่อย"</div>
