@@ -202,4 +202,88 @@
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
-        
+            .card-container {
+                box-shadow: none;
+                max-width: 100%;
+                border-radius: 0;
+                border: 1px solid #e2e8f0;
+            }
+            /* ปิดแอนิเมชันเวลาปริ้นท์ให้อยู่นิ่งๆ */
+            .dog {
+                animation: none !important;
+                transform: translateY(0) scaleX(var(--flip, 1)) !important;
+            }
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="card-container">
+        <header class="card-header">
+                        <img src="https://i.pinimg.com/236x/5c/bb/04/5cbb0499aa8a3149e20dc0c5b869a548.jpg" alt="รูปโปรไฟล์ ด.ญ.ธนิดา ปันม้า" class="profile-img">
+            
+            <div class="school-badge">🏫 โรงเรียนจอมทอง | ระดับชั้น ม.3/2</div>
+            <h1 class="name">เด็กหญิงธนิดา ปันม้า</h1>
+            <div class="nickname">(น้องแต๊กา)</div>
+            <div class="motto">"เป้าหมายใหญ่ไม่รอคนขี้เกียจแต่รอแต๊กาหน่อย"</div>
+        </header>
+
+        <div class="card-body">
+            
+            <section class="info-section">
+                <h2 class="section-title">👤 ข้อมูลส่วนตัว</h2>
+                <ul class="info-list">
+                    <li><span class="info-label">วันเกิด:</span> <span class="info-value">10 กุมภาพันธ์ 2555</span></li>
+                    <li><span class="info-label">เพศ:</span> <span class="info-value">หญิง</span></li>
+                    <li><span class="info-label">กรุ๊ปเลือด:</span> <span class="info-value">O</span></li>
+                  <li><span class="info-label">ราศี:</span> <span class="info-value">มังกร</span></li>
+                    <li><span class="info-label">ส่วนสูง:</span> <span class="info-value">158 ซม.</span></li>
+                    <li><span class="info-label">ภูมิลำเนา:</span> <span class="info-value">จังหวัดเชียงใหม่</span></li>
+                </ul>
+            </section>
+
+            <section class="info-section">
+                <h2 class="section-title">📚 การเรียน & เป้าหมาย</h2>
+                <ul class="info-list">
+                    <li><span class="info-label">วิชาที่ชอบ:</span> <span class="info-value">วิทยาศาสตร์</span></li>
+                    <li><span class="info-label">วิชาที่ยาก:</span> <span class="info-value">ภาษาอังกฤษ</span></li>
+                    <li><span class="info-label">ชมรม:</span> <span class="info-value">ดาราศาสตร์</span></li>
+                    <li><span class="info-label">ความฝัน:</span> <span class="info-value">แพทย์</span></li>
+                    <li><span class="info-label">เพื่อนสนิท:</span> <span class="info-value">ซีซ่าร์</span></li>
+                </ul>
+            </section>
+
+            <section class="info-section">
+                <h2 class="section-title">💖 ความชอบ & งานอดิเรก</h2>
+                <ul class="info-list">
+                    <li><span class="info-label">อาหารโปรด:</span> <span class="info-value">ผัดผัก</span></li>
+                    <li><span class="info-label">สีโปรด:</span> <span class="info-value">สีเขียว</span></li>
+                    <li><span class="info-label">กีฬา:</span> <span class="info-value">บาสเกตบอล</span></li>
+                    <li><span class="info-label">งานอดิเรก:</span> <span class="info-value">ฟังเพลง</span></li>
+                    <li><span class="info-label">เพลงที่ชอบ:</span> <span class="info-value">เพลงเก่าๆ</span></li>
+                    <li><span class="info-label">ซีรีส์/อนิเมะ:</span> <span class="info-value">นักเรียนพลังกิ๊ฟ</span></li>
+                </ul>
+            </section>
+
+            <section class="info-section">
+                <h2 class="section-title">✨ ทักษะความสามารถ</h2>
+                <div class="skills-container">
+                    <span class="skill-pill">พับใบตอง</span>
+                    <span class="skill-pill">ทำอาหาร</span>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="dogs-playground">
+            <div class="dog dog-1">🐕</div>
+            <div class="dog dog-2">🐩</div>
+        </div>
+
+    </main>
+
+</body>
+</html>
